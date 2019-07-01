@@ -117,11 +117,9 @@ class WaypointUpdater(object):
         return temp_waypoints
 
     def pose_cb(self, msg):
-        # TODO: Implement
         self.pose_current = msg         # Get the pose of the car right now
 
     def waypoints_cb(self, waypoints):
-        # TODO: Implement
         self.base_waypoints = waypoints  # Get and store the base waypoints
         if not self.waypoints_2d:
             self.waypoints_2d = [[waypoint.pose.pose.position.x, waypoint.pose.pose.position.y]
@@ -129,7 +127,6 @@ class WaypointUpdater(object):
             self.waypoint_tree = KDTree(self.waypoints_2d)
 
     def traffic_cb(self, msg):
-        # TODO: Callback for /traffic_waypoint message. Implement
         self.stopline_wp_idx = msg.data      # Get the nearest traffic light stopline index of basewaypoints
 
     def obstacle_cb(self, msg):
