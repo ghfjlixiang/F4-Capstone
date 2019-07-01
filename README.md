@@ -91,6 +91,8 @@ We are working on a fix to line up the OpenCV versions between the two.
 
 ### waypoint_updater
 First we define `pose_cb`, `waypoints_cb` and `traffic_cb` to receive the current car position, all the wps and tl idx.
+
 To generate an valid lane, we use `KDTree` to query the closest wp index to the car position. If 
 `stopline_wp_idx` exist, we will try to set a decelerate velocity from current idx to stopline wp idx.
+
 After the lane generated, we use `final_waypoints_pub` to public the wps in a loop with `rospy.Rate(50)`.
