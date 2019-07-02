@@ -20,7 +20,7 @@ class Controller(object):
         ki = 0.1
         kd = 0.
         mn = 0.
-        mx = 0.2
+        mx = 0.5
         self.throttle_controller = PID(kp, ki, kd, mn, mx)
 
         wheel_base = kwargs['wheel_base']
