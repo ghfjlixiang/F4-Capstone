@@ -6,6 +6,8 @@ Dong Zhao  - (dongzhaousc@gmail.com)
 
 Jie Zhou - (jayzhou215@163.com)
 
+John Lee - (ghfjlixiang@163.com)
+
 ### waypoint_updater
 First we define `pose_cb`, `waypoints_cb` and `traffic_cb` to receive the current car position, all the wps and tl idx.
 
