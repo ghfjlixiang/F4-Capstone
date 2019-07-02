@@ -134,3 +134,12 @@ So I created a simple classifier depend on the color characteristics of the ligh
 4. I can get the means of three parts of brightness. If the brightness mean of the red part is biggest. The light is red.
 ![alt text](./imgs/red_site_op.jpeg "red")
 ![alt text](./imgs/green_site_op.jpeg "green")
+
+### Traffic Light Detection
+Traffic Light Detection node receives data from the /image_color, /current_pose, and /base_waypoints topics and publishes the locations to to the /traffic_waypoint topic in order to stop the car for the red light. As mentioned earlier, Waypoint Updater node will make use of this information to determine vehicle velocity for given waypoints. The traffic light classifier node is implemented separately and is independent of the Traffic light Detection node, which implements the logic to publish information regarding where the vehicle should come to a stop.
+
+There are two tasks need to be achieved for traffic light detection node:
+
+1. Vehicle's location and (x, y) coordinates are used to check the nearest visible traffic light ahead of the vehicle. This is achieved with process_traffic_lights function in tl_detector.py file. In order to find the closest waypoints to the vehicle and lights, get_closest_waypoint function is used. Using these waypoint indices, we determine which light is ahead of the vehicle along the list of waypoints.
+
+2. Using camera image data to classify the color of the traffic light. The get_light_state function at tl_detector.py is to receive the camera images and do the classification with well trained deep learning model. 
