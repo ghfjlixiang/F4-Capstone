@@ -31,7 +31,7 @@ class TLClassifier(object):
         self.category_index = {1: {'id': 1, 'name': 'Green'}, 2: {'id': 2, 'name': 'Red'},
                                3: {'id': 3, 'name': 'Yellow'}, 4: {'id': 4, 'name': 'off'}}
         
-        self.image_result_show = True
+        self.image_result_show = False
 
         self.light_thresh = 0.4
         # create tensorflow session
